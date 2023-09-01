@@ -51,3 +51,19 @@ kg_int = int(kg)
 g = mass % 1000
 
 print(f"The weight in modern units:\n{kg_int} kilograms and {g:.2f} grams")
+
+"""2.6"""
+
+import random
+print('3 digit code')
+num1 = random.randint(0,9)
+num2 = random.randint(0,9)
+num3 = random.randint(0,9)
+print(f'Your code is: {num1}{num2}{num3}')
+
+print('4 digit code')
+num4 = random.randint(1,6)
+num5 = random.randint(1,6)
+num6 = random.randint(1,6)
+num7 = random.randint(1,6)
+print(f'Your code is: {num4}{num5}{num6}{num7}')
