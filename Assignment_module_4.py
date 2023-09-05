@@ -1,3 +1,4 @@
+
 """Module_4"""
 """4.1"""
 
@@ -23,25 +24,26 @@ print(f"{inches} inches is equal to {num_cm} centimeters")
 
 """4.3"""
 
+smallest = None
+largest = None
+
 while True:
     user_input = input("Enter a number: ")
 
     if user_input == "":
-        break  # Exit the loop if the user enters an empty string
+        break
 
-    try:
-        number = float(user_input)  # Convert user input to a floating-point number
-        number.append(number)
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
+    number = float(user_input)
 
-if number:
-    smallest = min(number)
-    largest = max(number)
+    if smallest is None or number < smallest:
+        smallest = number
+
+    if largest is None or number > largest:
+        largest = number
+
+if smallest is not None and largest is not None:
     print(f"Smallest number: {smallest}")
     print(f"Largest number: {largest}")
-else:
-    print("No numbers were entered.")
 
 """4.4"""
 
@@ -64,3 +66,28 @@ while player_guess != random_number:
         print("You are correct")
 
 """4.5"""
+
+correct_username = "python"
+correct_password = "rules"
+
+attempts = 0
+
+while attempts < 5:
+
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+
+
+    if username == correct_username and password == correct_password:
+        print("Welcome")
+        break
+
+    print("Invalid credentials. Please try again.")
+    attempts += 1
+
+if attempts == 5:
+    print("Access denied")
+
+"""4.6"""
+
+s

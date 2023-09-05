@@ -52,7 +52,7 @@ g = mass % 1000
 
 print(f"The weight in modern units:\n{kg_int} kilograms and {g:.2f} grams")
 
-"""2.6"""
+""2.6"""
 
 import random
 print('3 digit code')
