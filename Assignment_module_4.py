@@ -90,4 +90,17 @@ if attempts == 5:
 
 """4.6"""
 
-s
+import random
+
+points = int(input("Enter how many points are available: "))
+number = 1
+a = 0
+
+while number <= points:
+     x=random.uniform(-1,1)
+     y=random.uniform(-1,1)
+     if x ** 2 + y ** 2 <= 1:
+            a += 1
+     number = number + 1
+pi = 4 * a / points
+print(f"pi = {pi}")
