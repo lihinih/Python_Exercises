@@ -1,12 +1,12 @@
 """Module 3"""
 """3.1"""
-length = int(input("Enter the length of a zander in centimeters:"))
-
-if length >= 42:
-    print("OK")
+zander = float(input("Enter the length of a zander in centimeters: "))
+size = 42 - zander
+if zander < 42:
+    print(f"Zander is {size} cm below the size and release it back to the lake.")
 
 else:
-    print (f"Release the fish back into the lake, the caught fish was {length} centimeters below the size limit.")
+    print("Congratulations!!! you cought within the size.")
 
 """3.2"""
 
