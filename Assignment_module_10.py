@@ -1,32 +1,35 @@
 #1,2,3
 
-"""
+
 class Elevator:
-    def __init__(self,bottom_floor,top_floor):
+    def __init__(self,top_floor,bottom_floor):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
         self.current_floor = bottom_floor
 
-    def go_to_floor(self,destination_floor):
-        if destination_floor < self.current_floor:
-            self.floor_down(destination_floor)
-        elif destination_floor > self.current_floor:
-            self.floor_up(destination_floor)
+    def floor_up(self):
+        if self.current_floor < self.top_floor:
+           self.current_floor += 1
+           print(f"Elevator is now on floor {self.current_floor}")
 
-    def floor_up(self,destination_floor):
+    def floor_down(self):
+        if self.current_floor > self.bottom_floor:
+           self.current_floor -= 1
+           print(f"Elevator is now on floor {self.current_floor}")
+
+    def go_to_floor(self, destination_floor):
         while self.current_floor < destination_floor:
-            self.current_floor += 1
-            print(f"Elevator is now on floor {self.current_floor}")
-
-    def floor_down(self, destination_floor):
+            self.floor_up()
         while self.current_floor > destination_floor:
-            self.current_floor -= 1
-            print(f"Elevator is now on floor {self.current_floor}")
+            self.floor_down()
 
+h = Elevator(5,0)
+h.go_to_floor(5)
+h.go_to_floor(0)
 
 
 class Building:
-    def __init__(self,bottom_floor,top_floor,no_elevators):
+    def __init__(self,top_floor,bottom_floor,no_elevators):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
         self.elevators = [Elevator(bottom_floor, top_floor) for _ in range(no_elevators)]
@@ -44,14 +47,13 @@ class Building:
         for i,elevator in enumerate(self.elevators):
             elevator.go_to_floor(self.bottom_floor)
             print(f"Elevator {i} is on the bottom floor.")
+            print("Fire alarm!!!.All elevators move to down.")
 
 
-building = Building(1, 10, 3)
-building.run_elevator(0, 5)
-building.run_elevator(0,1)
+building = Building(0, 10, 3)
+building.run_elevator(1, 5)
+building.run_elevator(2,1)
 building.fire_alarm()
-
-"""
 
 #4
 class Car():
